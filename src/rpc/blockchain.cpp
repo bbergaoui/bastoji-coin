@@ -1180,7 +1180,7 @@ static void BIP9SoftForkDescPushBack(UniValue& bip9_softforks, const Consensus::
 
 UniValue getblockhashes(const JSONRPCRequest& request)
 {
-    if (request.fHelp || request.params.size() != 2)
+   /* if (request.fHelp || request.params.size() != 2)
         throw std::runtime_error(
             "getblockhashes timestamp\n"
             "\nReturns array of hashes of blocks within the timestamp range provided.\n"
@@ -1194,7 +1194,7 @@ UniValue getblockhashes(const JSONRPCRequest& request)
             "\nExamples:\n"
             + HelpExampleCli("getblockhashes", "1231614698 1231024505")
             + HelpExampleRpc("getblockhashes", "1231614698, 1231024505")
-        );
+        );*/
 
   //  unsigned int high = request.params[0].get_int();
    // unsigned int low = request.params[1].get_int();
@@ -2225,7 +2225,7 @@ static const CRPCCommand commands[] =
     { "blockchain",         "getblockcount",          &getblockcount,          {} },
     { "blockchain",         "getblock",               &getblock,               {"blockhash","verbosity|verbose"} },
     { "blockchain",         "getblockhash",           &getblockhash,           {"height"} },
-	  { "blockchain",       "getblockhashes",         &getblockhashes,         {"high","low"} },
+	  { "blockchain",       "getblockhashes",         &getblockhashes,         {} },
     { "blockchain",         "getblockheader",         &getblockheader,         {"blockhash","verbose"} },
     { "blockchain",         "getchaintips",           &getchaintips,           {} },
     { "blockchain",         "getdifficulty",          &getdifficulty,          {} },
