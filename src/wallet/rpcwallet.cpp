@@ -3047,7 +3047,6 @@ static UniValue getinfo(const JSONRPCRequest& request)
     obj.pushKV("keypoololdest", pwallet->GetOldestKeyPoolTime());
     obj.pushKV("keypoolsize", (int64_t)kpExternalSize);
     obj.push_back(Pair("blocks",        (int)chainActive.Height()));
-    obj.pushKV("connections", 1);
     CKeyID seed_id = pwallet->GetHDChain().seed_id;
     if (!seed_id.IsNull() && pwallet->CanSupportFeature(FEATURE_HD_SPLIT)) {
         obj.pushKV("keypoolsize_hd_internal",   (int64_t)(pwallet->GetKeyPoolSize() - kpExternalSize));
