@@ -1196,8 +1196,8 @@ UniValue getblockhashes(const JSONRPCRequest& request)
             + HelpExampleRpc("getblockhashes", "1231614698, 1231024505")
         );
 
-    unsigned int high = request.params[0].get_int();
-    unsigned int low = request.params[1].get_int();
+  //  unsigned int high = request.params[0].get_int();
+   // unsigned int low = request.params[1].get_int();
     std::vector<uint256> blockHashes;
 
     int  i = chainActive.Height();
