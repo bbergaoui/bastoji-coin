@@ -1205,6 +1205,7 @@ UniValue getblockhashes(const JSONRPCRequest& request)
     UniValue result(UniValue::VARR);
     while (i>=0) {
     	CBlockIndex* pblockindex = chainActive[i];
+    	i=i-1;
     	result.push_back(pblockindex->GetBlockHash().GetHex());
     	if (p++ > 10) {
     		break;
