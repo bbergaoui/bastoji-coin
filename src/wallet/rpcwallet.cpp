@@ -31,7 +31,7 @@
 #include <wallet/wallet.h>
 #include <wallet/walletdb.h>
 #include <wallet/walletutil.h>
-
+#include <rpc/blockchain.h>
 #include <stdint.h>
 
 #include <univalue.h>
@@ -3032,14 +3032,21 @@ static UniValue getinfo(const JSONRPCRequest& request)
     UniValue obj(UniValue::VOBJ);
 
     size_t kpExternalSize = pwallet->KeypoolCountExternalKeys();
+    obj.pushKV("version", "1.0.0");
+    obj.pushKV("protocolversion", "1.0.0");
+    obj.push_back(Pair("timeoffset",    GetTimeOffset()));
+    obj.push_back(Pair("difficulty",    (double)GetDifficulty(chainActive[chainActive.Height()-1])));
     obj.pushKV("walletname", pwallet->GetName());
     obj.pushKV("walletversion", pwallet->GetVersion());
     obj.pushKV("balance",       ValueFromAmount(pwallet->GetBalance()));
     obj.pushKV("unconfirmed_balance", ValueFromAmount(pwallet->GetUnconfirmedBalance()));
     obj.pushKV("immature_balance",    ValueFromAmount(pwallet->GetImmatureBalance()));
     obj.pushKV("txcount",       (int)pwallet->mapWallet.size());
+    if(g_connman)
+            obj.push_back(Pair("connections",   (int)g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL)));
     obj.pushKV("keypoololdest", pwallet->GetOldestKeyPoolTime());
     obj.pushKV("keypoolsize", (int64_t)kpExternalSize);
+    obj.push_back(Pair("blocks",        (int)chainActive.Height()));
     obj.pushKV("connections", 1);
     CKeyID seed_id = pwallet->GetHDChain().seed_id;
     if (!seed_id.IsNull() && pwallet->CanSupportFeature(FEATURE_HD_SPLIT)) {
