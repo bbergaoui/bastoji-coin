@@ -49,7 +49,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
+    const char* pszTimestamp = "The Times 31/Aug/2018 Sqoin team created bastoji coin";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -74,39 +74,39 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
 class CMainParams : public CChainParams {
 public:
     CMainParams() {
-	genesis = CreateGenesisBlock(1534754593,44095, 0x1e0ffff0, 1, 20 * COIN);
+	genesis = CreateGenesisBlock(1534754593,133855, 0x1e0ffff0, 1, 50 * COIN);
 
-
-/*    	    	    	  		bool fNegative;
+   	/*  	    	  		bool fNegative;
     	    	    	  		bool fOverflow;
     	    	    	  		uint32_t i=0;
 
 
 
     	    	    			while (true) {
-    	    	    					genesis = CreateGenesisBlock(1534754593,i++, 0x1e0ffff0, 1, 20 * COIN);
+    	    	    					genesis = CreateGenesisBlock(1534754593,i, 0x1e0ffff0, 1, 50 * COIN);
 
     	    	    				arith_uint256 bnTarget;
 
     	    	    				bnTarget.SetCompact(0x1e0ffff0, &fNegative, &fOverflow);
         	    			if (UintToArith256(genesis.GetHash()) > bnTarget) {
-    	  	    					std::cout << " nonce not correct  \n";
-    	    	    					std::cout << i << " ";
+    	  	    					//std::cout << " nonce not correct  \n";
+    	    	    			//		std::cout << i << " ";
+    	    	    					i++;
         	    				}
     	    	    				else {
     	    	    					std::cout << " nonce found  " << i << "\n";
     	    	    					std::cout << " genesis found  " <<  genesis.GetHash().ToString() << "\n";
-    	    	    					break;
-    	    	    					//		exit(-1);
+    	    	    					//break;
+    	    	    							exit(-1);
     	    	    				}
-    	    	    				}
-
-*/
+    	    	    				}*/
 
 
 
-    	 strNetworkID = "main";
-    	        consensus.nSubsidyHalvingInterval = 150;
+
+
+    	 	 	strNetworkID = "main";
+    	        consensus.nSubsidyHalvingInterval = 1051200;
     	        consensus.BIP16Exception = uint256();
     	        consensus.BIP34Height = 0;
     	        consensus.BIP34Hash = uint256();
@@ -143,9 +143,10 @@ public:
     	        nPruneAfterHeight = 1000;
 
     	        consensus.hashGenesisBlock = genesis.GetHash();
-    	        std::cout << "------------------" << consensus.hashGenesisBlock.ToString() << "--------";
-    	        std::cout << "------------------" << genesis.GetHash().ToString() << "--------";
-    	  assert(consensus.hashGenesisBlock  == uint256S("0000056e1a76a21866fd2da0c049e8c394e50c2560fa7bbe87f6dd72019d604f"));
+    	 //       std::cout<< ( consensus.hashGenesisBlock.ToString());
+//    	        std::cout << "------------------" << consensus.hashGenesisBlock.ToString() << "--------";
+//    	        std::cout << "------------------" << genesis.GetHash().ToString() << "--------";
+    	  assert(consensus.hashGenesisBlock  == uint256S("00000c1ed50d846cc7e9b0f0af23d1a84efd339345015ecf7a785134ffd581b3"));
     	        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
     	        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
@@ -267,14 +268,14 @@ public:
     	    	        consensus.hashGenesisBlock = genesis.GetHash();
     	    	       // std::cout << "------------------" << consensus.hashGenesisBlock.ToString() << "--------";
     	    	       // std::cout << "------------------" << genesis.GetHash().ToString() << "--------";
-    	    	  assert(consensus.hashGenesisBlock  == uint256S("00000c7cdc5432d59fcddd69f27e4c915dcd1ef0af49f4c7e859aec16082389b"));
+    	  //  	  assert(consensus.hashGenesisBlock  == uint256S("00000c7cdc5432d59fcddd69f27e4c915dcd1ef0af49f4c7e859aec16082389b"));
     	    	        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
     	    	        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
     	    	        vFixedSeeds.clear();
     	    	        vSeeds.clear();
 
-    	    	        vSeeds.emplace_back("demystifytokens1.com");
+    	    	        vSeeds.emplace_back("demystifytokens.com");
     	    	        vSeeds.emplace_back("demystifytokens2.com");
     	    	        vSeeds.emplace_back("demystifytokens3.com");
     	    	        vSeeds.emplace_back("demystifytokens10.com");
