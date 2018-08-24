@@ -119,5 +119,5 @@ void lyra2re2_hash(const char* input, char* output)
     
    	memcpy(output, hashA, 32);
 
-   	reverse_ints(output);
+   	reverse_ints(output,32);
 }

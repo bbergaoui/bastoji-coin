@@ -74,9 +74,9 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
 class CMainParams : public CChainParams {
 public:
     CMainParams() {
-	genesis = CreateGenesisBlock(1534754593,133855, 0x1e0ffff0, 1, 50 * COIN);
+	genesis = CreateGenesisBlock(1534754593,876527, 0x1e0ffff0, 1, 50 * COIN);
 
-   	/*  	    	  		bool fNegative;
+   	  	    /*	  		bool fNegative;
     	    	    	  		bool fOverflow;
     	    	    	  		uint32_t i=0;
 
@@ -99,7 +99,7 @@ public:
     	    	    					//break;
     	    	    							exit(-1);
     	    	    				}
-    	    	    				}*/
+    	    	    				} */
 
 
 
@@ -146,7 +146,7 @@ public:
     	 //       std::cout<< ( consensus.hashGenesisBlock.ToString());
 //    	        std::cout << "------------------" << consensus.hashGenesisBlock.ToString() << "--------";
 //    	        std::cout << "------------------" << genesis.GetHash().ToString() << "--------";
-    	  assert(consensus.hashGenesisBlock  == uint256S("00000c1ed50d846cc7e9b0f0af23d1a84efd339345015ecf7a785134ffd581b3"));
+    	  assert(consensus.hashGenesisBlock  == uint256S("00000f78e433fbfe0780d9ff2daf52de590fe36935c23fac99ad107078223acd"));
     	        //assert(consensus.hashGenesisBlock == uint256S("0x0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"));
     	        //assert(genesis.hashMerkleRoot == uint256S("0x4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"));
 
