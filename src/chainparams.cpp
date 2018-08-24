@@ -106,7 +106,7 @@ public:
 
 
     	 	 	strNetworkID = "main";
-    	        consensus.nSubsidyHalvingInterval = 1051200;
+    	        consensus.nSubsidyHalvingInterval = 210000;
     	        consensus.BIP16Exception = uint256();
     	        consensus.BIP34Height = 0;
     	        consensus.BIP34Hash = uint256();
@@ -115,10 +115,10 @@ public:
     	        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
     	        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
     	        consensus.nPowTargetSpacing = 10 * 60;
-    	        consensus.fPowAllowMinDifficultyBlocks = true;
+    	        consensus.fPowAllowMinDifficultyBlocks = false;
     	        consensus.fPowNoRetargeting = true;
-    	        consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
-    	        consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
+    	        consensus.nRuleChangeActivationThreshold = 1916; // 75% for testchains
+    	        consensus.nMinerConfirmationWindow = 2016;
     	        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
     	        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1534701725;
     	        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
