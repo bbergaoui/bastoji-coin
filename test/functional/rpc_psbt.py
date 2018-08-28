@@ -5,14 +5,14 @@
 """Test the Partially Signed Transaction RPCs.
 """
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import BastojiTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, find_output
 
 import json
 import os
 
 # Create one-input, one-output, no-fee transaction:
-class PSBTTest(BitcoinTestFramework):
+class PSBTTest(BastojiTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = False

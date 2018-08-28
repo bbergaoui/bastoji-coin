@@ -19,7 +19,7 @@ from test_framework.messages import (
 from test_framework.mininode import (
     P2PDataStore,
 )
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import BastojiTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -33,7 +33,7 @@ def assert_template(node, block, expect, rehash=True):
     rsp = node.getblocktemplate({'data': b2x(block.serialize()), 'mode': 'proposal'})
     assert_equal(rsp, expect)
 
-class MiningTest(BitcoinTestFramework):
+class MiningTest(BastojiTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = False

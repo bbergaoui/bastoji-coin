@@ -51,7 +51,7 @@ static void noui_InitMessage(const std::string& message)
 
 void noui_connect()
 {
-    // Connect bitcoind signal handlers
+    // Connect bastojid signal handlers
     uiInterface.ThreadSafeMessageBox_connect(noui_ThreadSafeMessageBox);
     uiInterface.ThreadSafeQuestion_connect(noui_ThreadSafeQuestion);
     uiInterface.InitMessage_connect(noui_InitMessage);

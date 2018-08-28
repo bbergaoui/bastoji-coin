@@ -8,8 +8,8 @@
       </BuildDependsOn>
   </PropertyGroup>
   <Target Name="CopyConfig"
-          Inputs="$(MSBuildThisFileDirectory)bitcoin_config.h"
-          Outputs="$(MSBuildThisFileDirectory)..\src\config\bitcoin-config.h">
-      <Copy SourceFiles="$(MSBuildThisFileDirectory)bitcoin_config.h" DestinationFiles="$(MSBuildThisFileDirectory)..\src\config\bitcoin-config.h" />
+          Inputs="$(MSBuildThisFileDirectory)bastoji_config.h"
+          Outputs="$(MSBuildThisFileDirectory)..\src\config\bastoji-config.h">
+      <Copy SourceFiles="$(MSBuildThisFileDirectory)bastoji_config.h" DestinationFiles="$(MSBuildThisFileDirectory)..\src\config\bastoji-config.h" />
   </Target>
 </Project>

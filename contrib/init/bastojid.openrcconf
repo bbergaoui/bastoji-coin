@@ -1,0 +1,33 @@
+# /etc/conf.d/bastojid: config file for /etc/init.d/bastojid
+
+# Config file location
+#BASTOJID_CONFIGFILE="/etc/bastoji/bastoji.conf"
+
+# What directory to write pidfile to?  (created and owned by $BASTOJID_USER)
+#BASTOJID_PIDDIR="/var/run/bastojid"
+
+# What filename to give the pidfile
+#BASTOJID_PIDFILE="${BASTOJID_PIDDIR}/bastojid.pid"
+
+# Where to write bastojid data (be mindful that the blockchain is large)
+#BASTOJID_DATADIR="/var/lib/bastojid"
+
+# User and group to own bastojid process
+#BASTOJID_USER="bastoji"
+#BASTOJID_GROUP="bastoji"
+
+# Path to bastojid executable
+#BASTOJID_BIN="/usr/bin/bastojid"
+
+# Nice value to run bastojid under
+#BASTOJID_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BASTOJID_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bastojid to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BASTOJID_SIGTERM_TIMEOUT=60

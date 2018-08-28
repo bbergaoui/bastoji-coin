@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SERIALIZE_H
-#define BITCOIN_SERIALIZE_H
+#ifndef BASTOJI_SERIALIZE_H
+#define BASTOJI_SERIALIZE_H
 
 #include <compat/endian.h>
 
@@ -999,4 +999,4 @@ size_t GetSerializeSizeMany(const S& s, const T&... t)
     return sc.size();
 }
 
-#endif // BITCOIN_SERIALIZE_H
+#endif // BASTOJI_SERIALIZE_H
